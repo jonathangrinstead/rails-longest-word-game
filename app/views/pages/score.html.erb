@@ -1,0 +1,30 @@
+<br>
+<br>
+<h1>Result</h1>
+<br>
+<br>
+<% if @english_word && @check_included %>
+<p>
+The word is valid according to the grid and is an English word
+</p>
+<%
+elsif @englsh_word && check_included == false
+%>
+<p>
+ The word can't be built out of the original grid
+ </p>
+ <%
+ elsif @english_word == false && @check_included
+ %>
+ <p>
+ The word is valid according to the grid, but is not a valid English word
+</p>
+<%
+else
+%>
+<p>
+That is not on the grid or a word?!?!?
+</p>
+<% end %>
+
+<%= link_to "New Game", game_path(@game), :class => "btn btn-primary" %>
